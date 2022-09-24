@@ -1,4 +1,15 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+// import VueInstaller from 'vue-pwa-installer';
+import App from './App.vue';
+import './registerServiceWorker';
+import router from './router';
+import store from './store';
+import './assets/style/app.scss';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.use(router);
+app.use(store);
+// app.use(VueInstaller);
+
+app.mount('#app');
